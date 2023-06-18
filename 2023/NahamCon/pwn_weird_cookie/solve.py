@@ -5,10 +5,12 @@ from pwn import *
 # How to run with a specific LIBC version
 # Use pwninit project: https://github.com/io12/pwninit
 #
-# --------------------- EXFILTRATE CANARY
+# --------------------- EXFILTRATE CANARY AND LIBC ADDRESS
 # Is a custom canary so, it has not the '0a' protection so we can exfiltrate with the read-puts combination of the binary
 # We take advantage of overwrite to exfiltrate the canary
-# 
+#       Canary = libc.sym['printf'] ^  0x123456789abcdef1 
+# So we have the libc address
+#
 # --------------------- ONE GADGET ADDRESS
 # Because of the space we have to write: 
 # Total: 0x40 = 64
