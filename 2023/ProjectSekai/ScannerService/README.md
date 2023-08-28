@@ -1,4 +1,4 @@
-## ProjectSekai - Scanner Service (100p)
+## ProjectSekai - Scanner Service (146 Solves -- 100p)
 ### Solved by [Maiky](https://github.com/maikypedia).
 
 In this CTF challenge, the web platform allow us to scan an IP:PORT pair using the nmap tool. The goal of this kind of challenge is used to achieve RCE.
