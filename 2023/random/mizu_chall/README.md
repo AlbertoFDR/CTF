@@ -93,7 +93,7 @@ The solution for the challenge consist in clobbering the `nextSibling` attribute
 </form>
 ```
 
-In this code snippet, as you see, we are clobbering the `nextSibling` with the first input and the form. After that, we need to add the payload inside the form, so that, in the moment of removing the node (`form`), the function will the the child nodes (`input2` and `img`) to `nextSibling` (`input1`). Doing that, our payload `img` would avoid the sanitization. The second `input` is used to provoke the error in the `form`.
+In this code snippet, as you see, we are clobbering the `nextSibling` with the first input and the form. After that, we need to add the payload inside the form, so that, in the moment of removing the node (`form`), the function will add the child nodes (`input2` and `img`) to `nextSibling` (because of the clobber, `input1`). Doing that, our payload `img` would avoid the sanitization. The second `input` is used to provoke the error in the `form`.
 
 ![fig1](./figs/1.png)
 ![fig1](./figs/2.png)

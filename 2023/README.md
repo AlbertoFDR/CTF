@@ -8,3 +8,6 @@
 	- web:
 		- ScannerService: Bypass for `Command Injection` in Nmap params.
 		- Frog-WAF: `SSTI` in `Java` (`buildConstraintViolationWithTemplate`). `Character Bypass` using `[]` and `getSize()`.
+3. Random
+	- web:
+		- [Mizu's](https://twitter.com/kevin_mizu) chall: `DOM Clobbering`.
