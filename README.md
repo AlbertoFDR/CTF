@@ -1,3 +1,8 @@
+### 2024
+1. IrisCTF
+	- web:
+		- lamenote: 'XS leak' using `CSP restriction` and `history.length`. 
+
 ### 2023
 1. NahamCon
 	- pwn:
