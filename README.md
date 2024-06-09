@@ -2,6 +2,9 @@
 1. IrisCTF
 	- web:
 		- lamenote: 'XS leak' using `CSP restriction` and `history.length`. 
+2. Akasec
+	- web:
+		- HackerNickname: `JacksonInject`, `curl globbing` and `Java Class Instance` of `org.springframework.context.support.FileSystemXmlApplicationContext`. 
 
 ### 2023
 1. NahamCon
