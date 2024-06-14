@@ -5,6 +5,11 @@
 2. Akasec
 	- web:
 		- HackerNickname: `JacksonInject`, `curl globbing` and `Java Class Instance` of `org.springframework.context.support.FileSystemXmlApplicationContext`. 
+3. GreyCTF
+	- web
+		- CSS exfiltration
+4. OpenECSC
+	- web (all): [writeup](https://albertofdr.github.io/post/openecsc2024-round1-web-writeup/)
 
 ### 2023
 1. NahamCon
