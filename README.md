@@ -10,6 +10,10 @@
 		- CSS exfiltration
 4. OpenECSC
 	- web (all): [writeup](https://albertofdr.github.io/post/openecsc2024-round1-web-writeup/)
+5. JustCTF
+	- web (backslash): `nginx njs` and `proxy pass`.
+	- web (PocketBase): ¿mutation? `XSS`.
+
 
 ### 2023
 1. NahamCon
