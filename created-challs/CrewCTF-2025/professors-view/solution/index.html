@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display Capture Request</title>
+  <script>
+    async function captureDisplay() {
+      try {
+        await fetch("/?message=Starting");
+        // Request the display-capture permission to capture the screen
+        const stream = await navigator.mediaDevices.getDisplayMedia({ video: true });
+        
+        // If permission is granted, send a GET request to the same origin
+        await fetch( "/?message=Display%20capture%20permission%20granted");
+
+        const video = document.createElement("video");
+
+        video.srcObject = stream;
+        video.play();
+
+        video.onloadedmetadata = async () => {
+            const canvas = document.createElement("canvas");
+            const context = canvas.getContext("2d");
+
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            stream.getTracks().forEach(track => track.stop());
+
+            const screenshotDataUrl = canvas.toDataURL("image/png");
+
+            const response = await fetch("/upload", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ image: screenshotDataUrl })
+            });
+          };
+
+
+        // Handle the response from the server
+        const result = await response.text();
+        console.log('Server Response:', result);
+      } catch (err) {
+        // Handle errors (e.g., if the user denies permission)
+        console.error('Display capture failed:', err);
+        await fetch( "/?message="+encodeURIComponent(err));
+      }
+    }
+
+    // Trigger the screen capture request on page load
+    window.onload = () => {
+      captureDisplay().then(()=>{captureDisplay()});
+    };
+  </script>
+</head>
+<body>
+  <h1>Display Capture Test</h1>
+  <p>If you allow screen capture, a request will be sent to the server.</p>
+</body>
+</html>
+
